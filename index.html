@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="lib/css/transition.css" />
 
 
-  <title>UESI</title>
+  <title>Restoration Monitoring</title>
 
 
 
@@ -56,6 +56,91 @@
 </head>
 
 <body>
+
+  <div class="container">
+    <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <img src="includes/logo.jpg" alt="" width="150" height="50" align="right"
+            style="margin-right:10px">
+          <button type="button" class="navbar-toggle" data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <!--##########################
+              ######### CITY SELECTOR ######
+              ###########################-->
+            <div style="width:175px; margin-right:10px; margin-top:7px">
+              <select name="Select City" class="ui fluid search dropdown" style="margin-right:30px; padding-right:30px;" id="selectBox"; onchange="changeFunc(value);">
+                <option value="">Select region</option>
+                <option value="tigray">Tigray, Ethiopia</option>
+                <option value="makueni">Makueni County, Kenya</option>
+                <option value="rwanda">Northern Province, Rwanda</option>
+              </select>
+            </div>
+          </ul>
+          <!--<style>
+              .toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 9px; }
+              .toggle.ios .toggle-handle { border-radius: 9px; }
+              div#bs-example-navbar-collapse-1 span#a {
+                display: inline;
+              }
+
+              div#bs-example-navbar-collapse-1:hover span#a {
+                display: none;
+              }
+
+              div#bs-example-navbar-collapse-1 span#b {
+                display: none;
+              }
+
+              div#bs-example-navbar-collapse-1:hover span#b {
+                display: inline;
+              }
+            </style>-->
+          <!--<label class="checkbox-inline" style="position:absolute; bottom:15%">
+              <input id="toggle-event" type="checkbox" checked data-toggle="toggle" data-on="<span id='a'>Toggle View</span><span id='b'>Indicator</span>" data-style='ios' data-off="<span id='a'>Toggle View</span><span id='b'>Raw</span>">
+            </label>-->
+
+
+          <!--<form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>-->
+
+
+
+          <ul class="nav navbar-nav navbar-right">
+            <!-- ### Remove splitscreen for Angel's 11-20 demonstration -->
+            <!--<li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">City <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Amsterdam</a></li>
+                  <li><a href="#">Bangkok</a></li>
+                  <li><a href="#">Beijing</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </li>-->
+            <!--<img src="images/ddl_logo_2019.png" alt="" width="100" height="50" align = "right" style="margin-right:20px">-->
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+  </nav>
 
   <div id="map">
   </div>
