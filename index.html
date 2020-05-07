@@ -1,221 +1,326 @@
+
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Standard Meta -->
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <link rel="stylesheet" href="lib/css/ol.css" />
-  <link rel="stylesheet" href="lib/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="lib/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="lib/css/leaflet.css" />
-  <link rel="stylesheet" href="lib/css/L.Control.Basemaps.css" />
-  <link rel="stylesheet" href="lib/css/mainpage.css?v={r911}" />
-  <link rel="stylesheet" href="lib/css/bootstrap-toggle.css" />
-  <link rel="stylesheet" href="lib/css/dropdown.css" />
-  <link rel="stylesheet" href="lib/css/transition.css" />
-  <link rel="stylesheet" href="lib/css/Control.Loading.css" />
+  <!-- Site Properties -->
+  <title>Restoration Mapper</title>
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/site.css">
+
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/container.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/grid.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/header.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/image.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/menu.css">
+
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/divider.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/dropdown.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/segment.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/button.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/list.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/icon.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/sidebar.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/transition.css">
+
+  <style type="text/css">
+
+    .hidden.menu {
+      display: none;
+    }
+    .masthead p {
+      color: black !important;
+    }
+
+    .masthead.segment {
+      background-color: DarkSeaGreen !important;
+
+      min-height: 700px;
+      padding: 1em 0em;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .ui.container.item {
+      color: black !important;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }
 
 
+  </style>
 
-  <title>Restoration Monitoring</title>
-
-
-  <script type="text/javascript" src="lib/js/ol.js"></script>
-  <script src="lib/js/leaflet-src.js"></script>
-  <script src="lib/js/leaflet.ajax.js"></script>
   <script src="lib/js/jquery-3.1.1.min.js"></script>
-  <script src="lib/js/spin.js"></script>
-  <script src="lib/js/leaflet.spin.js"></script>
-  <script src="lib/js/turf.min.js" charset="utf-8"></script>
-  <script src="lib/js/bootstrap.min.js"></script>
-  <script src="lib/js/L.Control.Basemaps.js"></script>
-  <script src="lib/js/geotiff.js"></script>
-  <script src="lib/js/plotty.js"></script>
-  <script src="lib/js/leaflet-geotiff.js"></script>
-  <script src="https://d3js.org/d3.v2.js"></script>
-  <script src="lib/js/bootstrap-toggle.js"></script>
+  <script src="lib/semantic-ui/js/visibility.js"></script>
+  <script src="lib/semantic-ui/js/sidebar.js"></script>
+  <script src="lib/semantic-ui/js/transition.js"></script>
   <script src="lib/js/dropdown.min.js"></script>
-  <script src="lib/js/transition.min.js"></script>
-  <script src="lib/js/leaflet-side-by-side.js"></script>
-  <script src="lib/js/url-search-params.js"></script>
-  <script src="https://unpkg.com/proj4"></script>
-  <script src="lib/js/Control.Loading.js"></script>
-  <script src="https://unpkg.com/georaster"></script>
-  <script src="https://unpkg.com/georaster-layer-for-leaflet/georaster-layer-for-leaflet.browserify.min.js"></script>
+  <script>
+  $(document)
+    .ready(function() {
 
-  <!-- BRING IN THE JAVASCIPT HERE -->
-  <script type="text/javascript" src="lib/mapindex.js"></script>
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+    })
+  ;
+  </script>
 </head>
-
 <body>
 
-  <div class="container">
-    <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <img src="includes/logo.jpg" alt="" width="150" height="50" align="right"
-            style="margin-right:10px">
-          <button type="button" class="navbar-toggle" data-toggle="collapse"
-            data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
 
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <!--##########################
-              ######### CITY SELECTOR ######
-              ###########################-->
-            <div style="width:225px; margin-right:10px; margin-top:7px">
-              <select name="Select City" class="ui fluid search dropdown" style="margin-right:30px; padding-right:30px;" id="selectBox"; onchange="changeFunc(value);">
-                <option value="">Select region</option>
-                <option value="brazil">Brazil - Esperito Santos</option>
-                <option value="paraiba">Brazil - Vale de Paraiba</option>
-                <option value='cameroon'>Cameroon - Far North</option>
-                <option value='caf'>CAR - Baboua</option>
-                <option value="drc">DRC - Kafubu</option>
-                <option value="colombia">Colombia - Girardot</option>
-                <option value="tigray">Ethiopia - Tigray</option>
-                <option value="ghana">Ghana - Upper East</option>
-                <option value="mamprusi">Ghana - Mamprusi</option>
-                <option value="upperwest">Ghana - Ashanti</option>
-                <option value="bonoeast">Ghana - Bono East</option>
-                <option value="kwahu">Ghana - Kwahu</option>
-                <option value="guatemala">Guatemala - Peten</option>
-                <option value="guinea">Guinea - Kankan</option>
-                <option value="honduras">Honduras</option>
-                <option value="india">India - Sidhi</option>
-                <option value="kochi">India - Kochi</option>
-                <option value="jakarta">Indonesia - Jakarta</option>
-                <option value="makueni">Kenya - Makueni County</option>
-                <option value="makueni-2">Kenya - Makueni 2</option>
-                <option value="madagascar">Madagascar - Antananarivo</option>
-                <option value="malawi">Malawi - Rhumpi</option>
-                <option value="campeche">Mexico - Campeche</option>
-                <option value="bonanza">Nicaragua - Bonanza</option>
-                <!--<option value="nicaragua">Nicaragua</option>-->
-                <option value="niger">Niger - Koure</option>
-                <option value="rwanda">Rwanda - Northern Province</option>     
-                <!--<option value="stlucia">Saint Lucia</option>   -->       
-                <option value="elsalvador">El Salvador - Chalatenango</option>
-                <option value="imposible">El Salvador - Imposible</option>
-                <option value="senegal">Senegal</option>
-                <option value="tanzania">Tanzania - Kongwa</option>
-                <!-- <option value="usa">USA - Oregon</option>-->
-                
-                <!--<option value="malawi">Rhumpi, Malawi</option>-->
-              </select>
-            </div>
-          </ul>
-          <!--<style>
-              .toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 9px; }
-              .toggle.ios .toggle-handle { border-radius: 9px; }
-              div#bs-example-navbar-collapse-1 span#a {
-                display: inline;
-              }
-
-              div#bs-example-navbar-collapse-1:hover span#a {
-                display: none;
-              }
-
-              div#bs-example-navbar-collapse-1 span#b {
-                display: none;
-              }
-
-              div#bs-example-navbar-collapse-1:hover span#b {
-                display: inline;
-              }
-            </style>-->
-          <!--<label class="checkbox-inline" style="position:absolute; bottom:15%">
-              <input id="toggle-event" type="checkbox" checked data-toggle="toggle" data-on="<span id='a'>Toggle View</span><span id='b'>Indicator</span>" data-style='ios' data-off="<span id='a'>Toggle View</span><span id='b'>Raw</span>">
-            </label>-->
-
-
-          <!--<form class="navbar-form navbar-left" role="search">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-              </div>
-              <button type="submit" class="btn btn-default">Submit</button>
-            </form>-->
-
-
-
-          <ul class="nav navbar-nav navbar-right">
-            <div style="width:150px; margin-right:10px; margin-top:15px">
-              <a href ='https://forms.gle/fK1zKaW1qWAXMpG8A'>Submit Data Request</a>
-            </div>
-            <!-- ### Remove splitscreen for Angel's 11-20 demonstration -->
-            <!--<li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">City <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Amsterdam</a></li>
-                  <li><a href="#">Bangkok</a></li>
-                  <li><a href="#">Beijing</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </li>-->
-            <!--<img src="images/ddl_logo_2019.png" alt="" width="100" height="50" align = "right" style="margin-right:20px">-->
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-  </div>
-  </nav>
-
-  <div id="map">
-  </div>
-
-  <div class="row main-row">
-    <div class="col-sm-4 col-md-3 sidebar sidebar-left pull-left">
-      <div class="panel-group sidebar-body" id="accordion-left">
-        <!--<div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" href="#properties">
-                    <i class="fa fa-list-alt"></i>
-                    About this indicator
-                  </a>
-                </h4>
-              </div>
-              <div id="properties" class="panel-collapse collapse">
-                <div class="panel-body" id="overview">
-                  <p>
-                  Click on an indicator above to map various demographic and environmental variables.
-                  </p>
-                  <script>
-                  if (current_indicator=="PM25") {
-                    document.getElementById("overview").innerHTML = "hello"
-                  }
-                  </script>
-                  <p>
-                  Click on any neighborhood to explore the data.
-                  </p>
-                </div>
-              </div>
-            </div>-->
+<!-- Following Menu -->
+<div class="ui large top fixed hidden menu">
+  <div class="ui container">
+    <a class="active item">Home</a>
+    <a class="item">Map</a>
+    <a class="item">Request data</a>
+    <!--<a class="item">Careers</a>-->
+    <div class="right menu">
+      <!--<div class="item">
+        <a class="ui button">Log in</a>
       </div>
-      <!--###############################
-              ######### HOW TO USE WEBSITE ######
-              ################################-->
-
+      <div class="item">--
+        <a class="ui primary button">Sign Up</a>
+      </div>-->
     </div>
   </div>
-  </div>
-  </div>
+</div>
 
-  <script>
-    $(function () {
-      $('[data-toggle="tooltip"]').tooltip()
-    })
-  </script>
+<!-- Sidebar Menu -->
+<div class="ui vertical inverted sidebar menu">
+  <a class="active item">Home</a>
+  <a class="item">Map</a>
+  <a class="item">Request data</a>
+  <!--<a class="item">Careers</a>
+  <a class="item">Login</a>
+  <a class="item">Signup</a>-->
+</div>
+
+
+<!-- Page Contents -->
+<div class="pusher">
+  <div class="ui inverted vertical masthead center aligned segment">
+
+    <div class="ui container">
+      <div class="ui large secondary inverted pointing menu" style="border-color:DarkSeaGreen">
+        <a class="toc item">
+          <i class="sidebar icon"></i>
+        </a>
+        <a class="active item" style="color:black !important">Home</a>
+        <a class="item" href = 'map.html'style="color:black !important">Map</a>
+        <a class="item"style="color:black !important" href='https://forms.gle/fK1zKaW1qWAXMpG8A'>Request data</a>
+        <!--
+        <div class="right item">
+          <a class="ui inverted button">Log in</a>
+          <a class="ui inverted button">Sign Up</a>
+        </div>
+      -->
+      </div>
+    </div>
+
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        Restoration Mapper
+      </h1>
+      <h2>Landscape scale monitoring of trees inside and outside of forests</h2>
+      <!--<div class="ui huge primary button">Open map <i class="right arrow icon"></i></div>-->
+      <div class="ui fluid search selection dropdown" style="width:225px; margin: 0 auto; display:inline-block;" >
+        <input type="hidden" name="country" onchange="set_landscape(value);">
+        <i class="dropdown icon"></i>
+        <div class="default text">Select Landscape</div>
+          <div class="menu">
+            <div class="item" data-value="cameroon"></i>Cameroon</div>
+            <div class="item" data-value="niger"></i>Niger</div>
+            <div class="item" data-value="malawi"></i>Malawi</div>
+          </div>
+        </div>
+        <button class="ui button" onclick="follow_landscape()">View data</button>
+      </div>
+    </div>
+    <!--</div>-->
+
+  <!--</div>-->
+  <!--
+  <div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="eight wide column">
+          <h3 class="ui header">We use open source technologies</h3>
+          <p>Monitoring tree cover at the landscape scale has never been easier, with state-of-the-art artificial intelligence and open-source satellite imagery.</p>
+        </div>
+        <div class="six wide right floated column">
+          <img src="assets/images/wireframe/white-image.png" class="ui large bordered rounded image">
+        </div>
+      </div>
+      <div class="row">
+        <div class="center aligned column">
+          <a class="ui huge button">Check Them Out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
+
+  <div class="ui vertical stripe quote segment">
+    <div class="ui equal width stackable internally celled grid">
+      <div class="center aligned row">
+        <div class="column">
+          <h3>Open source imagery</h3>
+          <p>Restoration Mapper uses free satellite data</p>
+        </div>
+        <div class="column">
+          <h3>Open source artificial intelligence</h3>
+          <p>Powered by TensorFlow and Google Cloud</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--
+  <div class="ui vertical stripe segment">
+    <div class="ui text container">
+      <h3 class="ui header">Breaking The Grid, Grabs Your Attention</h3>
+      <p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.</p>
+      <a class="ui large button">Read More</a>
+      <h4 class="ui horizontal header divider">
+        <a href="#">Case Studies</a>
+      </h4>
+      <h3 class="ui header">Did We Tell You About Our Bananas?</h3>
+      <p>Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our bananas can really dance.</p>
+      <a class="ui large button">I'm Still Quite Interested</a>
+    </div>
+  </div>
+-->
+
+<!--
+  <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">About</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Sitemap</a>
+            <a href="#" class="item">Contact Us</a>
+            <a href="#" class="item">Religious Ceremonies</a>
+            <a href="#" class="item">Gazebo Plans</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header">Footer Header</h4>
+          <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+        </div>
+      </div>
+    </div>
+  </div>-->
+</div>
+
+<script>
+  $('.ui.dropdown')
+  .dropdown();
+
+  var landscape;
+
+  function follow_landscape() {
+    window.location = "map.html?location=" + landscape
+  }
+
+  function set_landscape(value) {
+    landscape = value;
+  }
+  
+</script>
 </body>
 
 </html>
