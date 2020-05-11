@@ -197,15 +197,17 @@
 
 <!-- Page Contents -->
 <div class="pusher">
+  
   <div class="ui inverted vertical masthead center aligned segment">
-
+    <img src="lib/logo.png" alt="" width="150" height="50" align="right"
+            style="margin-right:10px">
     <div class="ui container">
       <div class="ui large secondary inverted pointing menu" style="border-color:None">
         <a class="toc item">
           <i class="sidebar icon"></i>
         </a>
         <a class="active item" style="color:white !important">Home</a>
-        <a class="item" href = 'map.html'style="color:white !important">Map</a>
+        <a class="item" href = 'tiled.html'style="color:white !important">Map</a>
         <a class="item"style="color:white !important" href='https://forms.gle/fK1zKaW1qWAXMpG8A'>Request data</a>
         <!--
         <div class="right item">
@@ -322,7 +324,7 @@
   var landscape;
 
   function follow_landscape() {
-    window.location = "map.html?location=" + landscape
+    window.location = "tiled.html?location=" + landscape
   }
 
   function set_landscape(value) {
