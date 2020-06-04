@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>About</title>
+
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/site.css">
+
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/container.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/grid.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/header.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/image.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/menu.css">
+
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/divider.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/dropdown.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/segment.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/button.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/list.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/icon.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/sidebar.css">
+  <link rel="stylesheet" type="text/css" href="lib/semantic-ui/css/transition.css">
+
+  <style type="text/css">
+  body {
+    background-color: #FFFFFF;
+  }
+  .ui.menu .item img.logo {
+    margin-right: 1.5em;
+  }
+  .ui.menu {
+    min-height: 60px;
+    background-color: DarkSeaGreen !important;
+  }
+  .main.container {
+    margin-top: 7em;
+  }
+  .wireframe {
+    margin-top: 2em;
+  }
+  .ui.footer.segment {
+    margin: 5em 0em 0em;
+    padding: 5em 0em;
+  }
+  .masthead {
+      background-image: url('lib/bg.jpg') !important;
+      background-size: cover !important;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <div class="ui fixed inverted menu">
+    <div class="ui container">
+      <a href="index.html" class="item"><h4>Home</h4></a>
+      <a href="#" class="item"><h4>Map</h4></a>
+      <a href="#" class="item"><h4>Request Data</h4></a>
+      <a href="#" class="item"><h4>About</h4></a>
+    </div>
+  </div>
+
+  <div class="ui main text container">
+    <h1 class="ui header">About Restoration Mapper</h1>
+    <h3 class="ui header">Overview</h3>
+    <p>Restoration Mapper is an online tool to create wall-to-wall maps of tree presence using open source artificial intelligence and open source satellite imagery. The Restoration Mapper approach enables monitoring stakeholders to:
+      <ul>
+        <li>Rapidly assess tree density in non-forested landscapes</li>
+        <li>Establish wall-to-wall baseline data</li>
+        <li>Measure yearly change in tree density without conducting follow-up mapathons</li>
+        <li>Generate maps relevant to land use planning</li>
+        <li>Identify agroforestry, riparian buffer zones, and crop buffer zones</li>
+        <li>Generate GeoTIFFs for further spatial analysis or combination with other datasets</li>
+      </ul>
+      </p>
+    <h3 class="ui header">Usage</h3>
+    <p>Restoration mapper is open source. All code and data is available for use and is hosted on <a href ="github.com/wri/restoration-mapper">GitHub</a>. While one can request data without any programming through <a href="https://forms.gle/fK1zKaW1qWAXMpG8A">this form</a>, the original code can be altered and adapted by cloning the <a href="https://hub.docker.com/repository/docker/johnbrandtwri/restoration_mapper">Docker container</a>.
+
+    <h3 class="ui header">Methodology</h3>
+    <p> Restoration mapper uses open source artificial intelligence, powered by TensorFlow. The approach is specifically designed to allow for the identification of small and scattered trees in heterogeneous and mosaic landscape. The preprint of the methodology is available <a href="https://arxiv.org/abs/2005.08702">here</a>.
+
+  </div>
+
+  <div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
+      <div class="ui stackable inverted divided grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">Group 1</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Link One</a>
+            <a href="#" class="item">Link Two</a>
+            <a href="#" class="item">Link Three</a>
+            <a href="#" class="item">Link Four</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Group 3</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Link One</a>
+            <a href="#" class="item">Link Two</a>
+            <a href="#" class="item">Link Three</a>
+            <a href="#" class="item">Link Four</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header">Footer Header</h4>
+          <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
